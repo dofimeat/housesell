@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продажа Домиков</title>
+    <meta name="title" content="Продажа Домиков">
+    <meta name="description" content="">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+    <script src="./assets/js/script.js" defer></script>
+
+
+
+</head>
+<body>
+    
+    <header class="header" data-header>
+        <div class="container">
+
+            <div class="logo-wrapper">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.JPEG" width="80" height="80" alt="HouseSell">
+                </a>
+                <span class="logo-text">HouseSell</span>
+            </div>
+
+            <nav class="navbar" data-navbar>
+                <ul class="navlist">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="#projects-list" class="nav-link">Проекты</a></li>
+                    <li><a href="#objects" class="nav-link">Наши Объекты</a></li>
+                    <li><a href="#" class="nav-link">Контакты</a></li>
+                    <li><a href="#" class="nav-link">Перезвонить</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <div class="bx bx-menu" id="menu-icon">&#9776;</div>
+                </div>
+            </nav>
+
+        </div>
+
+
+    </header>
+
+    <main>
+        <section id="photo-gallery">
+            <div class="gallery-container">
+                <h2>Фотогалерея Проекта</h2>
+                <div class="gallery">
+                    <div class="photo">
+                        <img src="./assets/images/projects1-1.jpg" alt="Description of image 1">
+                    </div>
+                    <div class="photo">
+                        <img src="./assets/images/projects1-2.jpg" alt="Description of image 2">
+                    </div>
+                    <div class="photo">
+                        <img src="./assets/images/projects1-3.jpg" alt="Description of image 3">
+                    </div>
+                    <div class="photo">
+                        <img src="./assets/images/projects1-4.jpg" alt="Description of image 4">
+                    </div>
+                </div>
+                <div class="description-section">
+                    <div class="description-container">
+                        <h3>Название Проекта</h3>
+                        <p>Общий размер: 4800x3200</p>
+                        <p>Дополнительное описание всех фотографий здесь...</p>
+                    </div>
+                    <div class="projects1-chema">
+                        <img src="./assets/images/projects1-chema.jpeg" alt="Preview of the project">
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="prev" onclick="plusSlide(-1)">&#10094;</div>
+                    <div class="next" onclick="plusSlide(1)">&#10095;</div>
+                </div>
+            </div>
+            <script src="./assets/js/gallery.js"></script>
+        </section>
+    </main>
+
+    
+</body>
+</html>

@@ -1,0 +1,685 @@
+
+:root {
+    --white: #FFFFFF;
+    --yellow: #F2BD26;
+
+    --primary-100: var(--green-light);
+    --primary-90: var(--green-dark);
+    --primary-80: var(--green-dark);
+    --primary-70: var(--green-dark);
+    --primary-40: var(--green-dark);
+    --primary-20: var(--green-dark);
+
+    --secondary-100: var(--green-light);
+    --secondary-20: var(--green-dark);
+
+    --neutral-100: #FAFCFF;
+    --neutral-98: #F2F5FA;
+    --neutral-95: #E9ECF2;
+    --neutral-90: #DADFE5;
+    --neutral-80: #C2C6CC;
+    --neutral-60: #919499;
+    --neutral-50: #797C80;
+    --neutral-40: #616366;
+    --neutral-30: #494A4D;
+    --neutral-20: #303133;
+    --neutral-10: #18191A;
+    --neutral-5: #0C0C0D;
+
+    --error-100: #025a02;
+    --primary-color: #5ba861;
+
+    --green-dark: #025a02; 
+    --green-light: #5ba861; 
+
+    --gradient-green: linear-gradient(270deg, var(--green-dark) 0%, var(--green-light) 100%);
+    
+    --font-primary: 'Montserrat', sans-serif;
+    
+    --fs-base: 62.5%;
+    --fs-headline-large: 3.6rem;
+    --fs-headline-medium: 2.8rem;
+    --fs-headline-small: 2.8rem;
+    --fs-title-large: 2.2rem;
+    --fs-title-medium: 2rem;
+    --fs-title-small: 1.8rem;
+    --fs-body-large: 1.6rem;
+    --fs-body-medium: 1.6rem;
+    --fs-label-large: 1.6rem;
+    --fs-label-medium: 1.4rem;
+
+    --lh-headline-large: 44px;
+    --lh-headline-medium: 36px;
+    --lh-headline-small: 36px;
+    --lh-title-large: 28px;
+    --lh-title-medium: 24px;
+    --lh-title-small: 24px;
+    --lh-body-large: 24px;
+    --lh-body-medium: 24px;
+    --lh-label-large: 24px;
+    --lh-label-large: 20px;
+
+    --weight-bold: 700;
+    --weight-semiBold: 600;
+    --weight-regular: 400;
+
+    --traking-n-025: -0.25px;
+    --traking-p-05: 0.5px;
+
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 16px;
+    --radius-extra-large: 32px;
+    --radius-full: 1000px;
+    --radius-circle: 50%;
+
+    --shadow-1: 0px 2px 4px 0px #00000033;
+    --shadow-2: 0px 5px 10px 0px #0000000D;
+    --shadow-3: 0px 5px 10px 0px #00000033;
+    --shadow-4: 0px 10px 20px 0px #0000001A;
+
+    --transition-easing-quick: cubic-bezier(0, 0.7, 0.3, 1);
+    --transition-duration-quick: 200ms;
+    --transition-duration-smooth: 500ms;
+}
+
+
+.green-text {
+    color: var(--gradient-green);
+}
+
+/* logo */
+
+.logo-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    
+  }
+  
+  .logo { 
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    margin-left: -10px; 
+  }
+  
+  .logo-text {
+    position: absolute;
+    top: 22px;
+    left: 50px;
+    font-size: 3.6rem;
+    color: var(--neutral-100);
+    margin-left: 80px; 
+  }
+
+/* header */
+
+.header {
+    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%); /* Используем градиент, аналогичный градиенту у блока hero */
+    position: fixed;
+    height: 82px;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    padding: 10px; 
+}
+
+
+header,
+article {
+    background: linear-gradient(to bottom, #025a02, #5ba861);
+}
+
+.header.active {
+    animation: slide_in 500ms ease forwards;
+    height: 82px;
+    background-color: var(--primary-color);
+}
+
+@keyframes slide_in {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+.header .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* меню сверху */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navlist {
+    display: flex;
+    
+}
+
+.navlist a {
+    display: inline-block;
+    margin: 0 35px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .50s ease;
+}
+
+.navlist a:hover {
+    text-shadow: 3px 3px 20px #066400, -2px 1px 30px #fff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .menu-icon {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.nav-right .menu-icon:hover {
+    background-color: #0056b3;
+}
+
+#menu-icon {
+    font-size: 34px;
+    color: #fff;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .nav-right {
+        display: flex;
+    }
+    .navlist {
+        display: none;
+    }
+}
+/* --- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li { list-style: none;}
+
+a,
+img,
+span,
+input,
+select,
+button { display: block; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img { height: auto; }
+
+input,
+button,
+select {
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+button { cursor: pointer; }
+
+input,
+select {
+    width: 100%;
+    outline: none;
+}
+
+address { font-style: normal; }
+
+select { 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+html {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: fit-content;
+    overflow-x: hidden;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background-color: var(--neutral-90); }
+::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-60);
+    border-radius: 4px;
+}
+
+.headline-large {
+    font-size: var(--fs-headline-large);
+    line-height: var(--lh-headline-large);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--traking-n-025);
+}
+
+.headline-medium {
+    font-size: var(--fs-headline-medium);
+    line-height: var(--lh-headline-medium);
+    font-weight: var(--weight-bold);
+}
+
+.headline-small {
+    font-size: var(--fs-headline-small);
+    line-height: var(--lh-headline-small);
+    font-weight: var(--weight-bold);
+}
+
+.title-large {
+    font-size: var(--fs-title-large);
+    line-height: var(--lh-title-large);
+    font-weight: var(--weight-semiBold);
+}
+
+.title-medium {
+    font-size: var(--fs-title-medium);
+    line-height: var(--lh-title-medium);
+    font-weight: var(--weight-semiBold);
+}
+
+.title-small {
+    font-size: var(--fs-title-small);
+    line-height: var(--lh-title-small);
+    font-weight: var(--weight-semiBold);
+}
+
+.body-large {
+    font-size: var(--fs-body-large);
+    line-height: var(--lh-body-large);
+    font-weight: var(--weight-regular);
+}
+
+.body-medium {
+    font-size: var(--fs-body-medium);
+    line-height: var(--lh-body-medium);
+    font-weight: var(--weight-regular);
+}
+
+.label-medium {
+    font-size: var(--fs-label-medium);
+    line-height: var(--lh-label-medium);
+    font-weight: var(--weight-semiBold);
+    letter-spacing: var(--traking-p-05);
+}
+
+
+.material-symbols-rounded {
+    display: block;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,   
+    'opsz' 24, 
+}
+
+.container {
+    padding-left: 0;
+    max-width: 580px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+
+
+
+article {
+    background: linear-gradient(to right, #025a02, #5ba861);
+}
+
+
+
+
+
+
+
+
+
+
+/* HERO */
+
+
+.hero-banner {
+    width: 100vw; /* Установим ширину изображения на 100% экрана */
+    height: auto; /* Поддерживаем соотношение сторон */
+    display: block; /* Блочный элемент, чтобы изображение занимало всю доступную ширину */
+    background-size: cover; /* Растягивает изображение на всю область */
+    background-position: left top; /* Выравниваем изображение в левом верхнем углу */
+}
+
+.hero-content {
+    background-color: #FFFFFF; /* white background color */
+    height: 600px; /* adjust the height as needed */
+    padding: 20px;
+}
+
+.projects-list h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px; /* Отступ снизу от заголовка "Проекты" */
+}
+
+/* карточка  */
+.card-img {
+    width: 100%; /* Новая ширина изображения */
+    height: 400px; /* Автоматическая высота для поддержки соотношения сторон */
+    border-radius: 10px; /* Скругление углов */
+    margin-bottom: 10px;
+}
+
+.projects-card {
+    background-color: #C0C0C0; 
+    padding: 10px;
+    border-radius: 20px;
+    width: calc(30% - 10px); /* Ширина на половину страницы с учетом отступов */
+    height: 540px;
+    margin: 35px; /* Отступ между карточками и отступ от краев */
+    float: left; /* Выравнивание карточек влево */
+    position: relative;
+}
+
+.card-title {
+    font-size: 2.5em; /* увеличение размера надписи "Проект" */
+}
+
+.card-price {
+    font-size: 2.2em; /* увеличение размера надписи "Цена" */
+}
+
+.btn-details {
+    display: inline-block;
+    padding: 20px 80px;
+    background-color: #025a02;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.5s;
+}
+
+.btn-details:hover {
+    background-color: white;
+    color: #025a02; 
+}
+
+.projects-list h2{
+    font-size: xx-large;
+    text-align: center;
+}
+
+
+/* object */
+
+.objects h3{
+    font-size: xx-large;
+}
+
+.objects {
+    width: 100%; /* Ширина объекта */
+    margin: 50px 0; /* Отступы сверху и снизу */
+    text-align: center;
+}
+
+.objects-card {
+    background-color: #C0C0C0; /* Фоновая颜ка для карточки */
+    padding: 10px;
+    border-radius: 20px; /* Скругление углов */
+    width: calc(30% - 10px); /* Ширина карточки на половину страницы с учетом отступов */
+    height: 540px;
+    margin: 35px; /* Отступ между карточками и отступ от краев */
+    float: left; /* Выравнивание карточек влево */
+    position: relative;
+}
+
+.objects-h3 {
+    font-size: 2.5em; /* увеличение размера надписи "Наши объекты" */
+}
+
+.object-title {
+    font-size: 2.5em;
+}
+
+.object-img{
+    width: 100%; /* Новая ширина изображения */
+    height: 400px; /* Автоматическая высота для поддержки соотношения сторон */
+    border-radius: 10px; /* Скругление углов */
+    margin-bottom: 10px;
+}
+
+/* projects1.html */
+
+.gallery-container {
+    text-align: center;
+    position: relative;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 200px;
+    margin-top: 60px;
+}
+
+.photo {
+    margin: 0 auto; /* Центрируем блок фотографии по горизонтали */
+    border-radius: 10px;
+    position: relative;
+    display: block; /* Изменяем стиль отображения на блок, чтобы он занимал всю доступную ширину родительского контейнера */
+    width: 1400px; /* Фиксированная ширина */
+    height: 800px; /* Фиксированная высота */
+}
+
+.photo img {
+    display: block;
+    width: 1400px; /* например, фиксированная ширина */
+    height: 800px; /* например, фиксированная высота */
+    object-fit: cover; /* сохранение пропорций, чтобы изображение целиком заполнить блок */
+    
+}
+
+
+.controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.prev, .next {
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.prev {
+    position: absolute;
+    left: 200px; /* Располагаем кнопку слева от фотографии */
+}
+
+.next {
+    position: absolute;
+    right: -1600px; /* Располагаем кнопку справа от фотографии */
+}
+
+.description-container {
+    background-color: #C0C0C0; 
+    padding: 23px;
+    border-radius: 20px;
+    width: calc(30% - 10px); /* Ширина на половину страницы с учетом отступов */
+    height: 560px;
+    margin: 25px 15px 35px 25px; /* Новые отступы: сверху, справа, снизу, слева */
+    float: left; /* Выравнивание карточек влево */
+    position: relative;
+    transform: translate(-25px, -25px); /* Сдвигаем на 25px влево и 25px вверх */
+    font-size: 20px; /* Увеличиваем размер текста */
+    text-align: left; /* Выравниваем текст по левому краю */
+}
+
+/* contacts */
+
+.footer {
+    background: #343434;
+    padding-top: 50px;
+    color: white;
+    text-align: center;
+    margin-top: auto; /* Поместит footer внизу страницы */
+    width: 100%; /* Займет всю ширину экрана */
+}
+
+.container {
+    
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.footer-content {
+    width: 33.3%;
+    color: white;
+}
+
+h4 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.footer-content p {
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+}
+
+.footer-content ul {
+    text-align: center;
+    padding: 0;
+}
+
+.list {
+    padding: 0;
+}
+
+.list li {
+    padding: 7px;
+    position: relative;
+    text-align: center;
+}
+
+.list li::before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #025a02;
+    transition-duration: .5s;
+}
+
+.list li:hover::before {
+    width: 70px;
+}
+
+.social-icons {
+    text-align: center;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+
+.social-icons i {
+    color: white;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #025a02;
+}
+
+.social-icons i:hover {
+    color: #025a02;
+}
+
+.contacts-bar {
+    background: #025a02;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+
+.contacts-bar p {
+    color: #343434;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
