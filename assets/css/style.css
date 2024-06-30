@@ -133,10 +133,7 @@
 }
 
 
-header,
-article {
-    background: linear-gradient(to bottom, #025a02, #5ba861);
-}
+
 
 .header.active {
     animation: slide_in 500ms ease forwards;
@@ -371,9 +368,7 @@ html, body {
 
 
 
-article {
-    background: linear-gradient(to right, #025a02, #5ba861);
-}
+
 
 
 
@@ -522,6 +517,7 @@ article {
     display: block; /* Изменяем стиль отображения на блок, чтобы он занимал всю доступную ширину родительского контейнера */
     width: 1400px; /* Фиксированная ширина */
     height: 800px; /* Фиксированная высота */
+    left: -150px;
 }
 
 .photo img {
@@ -565,14 +561,162 @@ article {
     background-color: #C0C0C0; 
     padding: 23px;
     border-radius: 20px;
-    width: calc(30% - 10px); /* Ширина на половину страницы с учетом отступов */
+    width: 1900px; /* Ширина на половину страницы с учетом отступов */
     height: 560px;
-    margin: 25px 15px 35px 25px; /* Новые отступы: сверху, справа, снизу, слева */
-    float: left; /* Выравнивание карточек влево */
+    margin: 0 auto; /* Центрируем контейнер влево и вправо */
+    float: none; /* Отменяем выравнивание карточек влево */
     position: relative;
-    transform: translate(-25px, -25px); /* Сдвигаем на 25px влево и 25px вверх */
-    font-size: 20px; /* Увеличиваем размер текста */
+    transform: none; /* Отменяем сдвиг на 25px влево и вверх */
+    font-size: 26px; /* Увеличиваем размер текста */
     text-align: left; /* Выравниваем текст по левому краю */
+    padding-left: calc(20px + 23px + 160px); /* Смещаем фон вправо на 200px, учитывая padding и border-radius */
+}
+
+/* application */
+
+
+
+.application{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #222;
+}
+
+.application .application-content{
+    max-width: 800px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.application .application-content h4{
+    font-size: 4em;
+    color: #fff;
+    font-weight: 500;
+    
+}
+
+.application .application-content p{
+    color: #fff;
+    font-size: 2.1em;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.application-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.application-container .applicationInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.application-container .applicationInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    cursor: pointer;
+}
+
+.application-container .applicationInfo .box .text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.application-container .applicationInfo .box .text h6{
+    font-weight: 500;
+    color: #025a02;
+}
+
+.application-container .applicationForm{
+    position: relative;
+    width: 40%;
+    background: #fff;
+    min-height: 100px;
+    padding: 60px;
+}
+
+.application-container .applicationForm h4{
+    font-size: 2em;
+    color: #333;
+    font-weight: 500;
+}
+
+.application-container .applicationForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.application-container .applicationForm .inputBox input{
+    width: 100%;
+    padding: 25px 0 5px; 
+    font-size: 1.1em;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.application-container .applicationForm .inputBox span{
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #666;
+    transition: 0.5s;
+    top: -15px;
+}
+
+.application-container .applicationForm .inputBox input:focus ~ span, .application-container .applicationForm .inputBox input:valid ~span{
+    color: #025a02;
+    font-size: 0.9em;
+    transform: translateY(-20px);
+}
+
+.application-container .applicationForm .inputBox input[type="submit"]{
+    width: 100px;
+    background: #025a02;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+@media (max-width: 991px){
+    .application{
+        padding: 50px;
+    }
+    .application-container{
+        flex-direction: column;
+    }
+    .application-container .applicationInfo, .application-container .applicationForm{
+        width: 100%;
+    }
+    .application-container .applicationForm{
+        padding: 50px 30px;
+    }
 }
 
 /* contacts */
@@ -599,10 +743,15 @@ article {
     color: white;
 }
 
-h4 {
+h5 {
     font-size: 28px;
     margin-bottom: 15px;
     text-align: center;
+}
+
+.contacts p{
+    font-size: 15px;
+    padding: 5px;
 }
 
 .footer-content p {
@@ -624,6 +773,7 @@ h4 {
     padding: 7px;
     position: relative;
     text-align: center;
+    font-size: 15px;
 }
 
 .list li::before {
