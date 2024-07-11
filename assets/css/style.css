@@ -116,10 +116,51 @@
     margin-left: 80px; 
   }
 
+  /* For tablets and smaller screens */
+@media (max-width: 1024px) {
+    .logo {
+        left: 50px;
+        width: 80px; /* Adjust width */
+    }
+
+    .logo-text {
+        left: 120px; /* Adjust left position */
+        font-size: 3.2rem; /* Adjust font size */
+        margin-left: 5px; /* Adjust margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        left: 50px;
+        width: 60px; /* Adjust width */
+    }
+
+    .logo-text {
+        left: 90px; /* Adjust left position */
+        font-size: 3.2rem; /* Adjust font size */
+        margin-left: 35px; /* Adjust margin */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .logo {
+        left: 50px;
+        width: 60px; /* Adjust width */
+    }
+
+    .logo-text {
+        left: 90px; /* Adjust left position */
+        font-size: 3.2rem; /* Adjust font size */
+        margin-left: 35px; /* Adjust margin */
+    }
+}
+
 /* header */
 
 .header {
-    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%); /* Используем градиент, аналогичный градиенту у блока hero */
+    background: #161616;
     position: fixed;
     height: 82px;
     right: 0;
@@ -154,67 +195,178 @@
     height: 100%;
 }
 
+    /* For tablets and smaller screens */
+@media (max-width: 1200px) {
+        .header {
+            height: 80px; /* Adjust height */
+            padding: 10px; /* Adjust padding */
+        }
+    
+        .header .container {
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-start;
+        }
+    }
+
+@media (max-width: 1000px) {
+    .header {
+        height: 80px; /* Adjust height */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .header .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .header {
+        height: 80px; /* Adjust height */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .header .container {
+        align-items: center; /* Center align items */
+        justify-content: space-around; /* Adjust spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 80px; /* Adjust height */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .header .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+}
 /* меню сверху */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navlist {
+  }
+  
+  .navlist {
     display: flex;
-    
-}
-
-.navlist a {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 300px;
+    white-space: nowrap;
+  }
+  
+  .navlist a {
     display: inline-block;
-    margin: 0 35px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all .50s ease;
-}
-
-.navlist a:hover {
-    text-shadow: 3px 3px 20px #066400, -2px 1px 30px #fff;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-right .menu-icon {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
+    margin: 0 20px;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-}
-
-.nav-right .menu-icon:hover {
-    background-color: #0056b3;
-}
-
-#menu-icon {
-    font-size: 34px;
-    color: #fff;
-    z-index: 10001;
-    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .3s ease;
+  }
+  
+  .navlist a:hover {
+    text-shadow: 3px 3px 20px #066400, -2px 1px 30px #fff;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: 450px; /* Чтобы разместить элементы .nav-right справа */
+  }
+  
+  .menu-icon {
     display: none;
-}
-
-
-@media (max-width: 768px) {
-    .nav-right {
-        display: flex;
-    }
+    cursor: pointer;
+    padding: 20px; /* Увеличение размера иконки */
+    background-color: #fff;
+    color: #000; /* Черный цвет иконки */
+    border-radius: 5px;
+    margin-left: auto; /* Автоматический отступ слева, чтобы разместить иконку вправо */
+  }
+  
+  .menu-icon span {
+    display: block;
+    width: 40px; /* Увеличение ширины полосок */
+    height: 8px; /* Увеличение высоты полосок */
+    background-color: #000; /* Черные полоски */
+    margin-bottom: 10px; /* Увеличение расстояния между полосками */
+  }
+  
+  .menu-icon:hover {
+    background-color: #fff;
+  }
+  
+  .mobile-navlist {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .mobile-navlist a {
+    display: block;
+    padding: 10px 0;
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-navlist a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  @media (max-width: 1200px) {
     .navlist {
-        display: none;
+      display: none;
     }
-}
+  
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute; /* Абсолютное позиционирование */
+      right: 50px; /* Прижимаем к правому краю */
+      top: 0; /* Прижимаем к верхнему краю */
+    }
+  
+    .menu-icon span {
+      width: 30px; /* Увеличение ширины полосок */
+      height: 4px; /* Увеличение высоты полосок */
+      background-color: #000; /* Черные полоски */
+      margin: 5px 0; /* Увеличение расстояния между полосками */
+      transition: transform 0.3s ease; /* Анимация при открытии/закрытии */
+    }
+  
+    .menu-icon.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .menu-icon.open span:nth-child(2) {
+      transform: rotate(-45deg) translate(4px, -4px);
+    }
+  
+    .mobile-navlist.open {
+      display: block;
+    }
+  }
+
+  
+  
 /* --- */
 
 *,
@@ -382,12 +534,23 @@ html, body {
 /* HERO */
 
 
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота экрана */
+    overflow: hidden;
+}
+
 .hero-banner {
-    width: 100vw; /* Установим ширину изображения на 100% экрана */
-    height: auto; /* Поддерживаем соотношение сторон */
-    display: block; /* Блочный элемент, чтобы изображение занимало всю доступную ширину */
-    background-size: cover; /* Растягивает изображение на всю область */
-    background-position: left top; /* Выравниваем изображение в левом верхнем углу */
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url('./assets/images/hero.jpeg');
+    background-size: cover; /* Масштабируем изображение, чтобы покрыть весь блок */
+    background-position: center top; /* Центрируем изображение по горизонтали, прижимаем к верху */
+    background-repeat: no-repeat;
+    transition: background-position 0.3s ease; /* Плавный переход при изменении позиции фона */
 }
 
 .hero-content {
@@ -396,10 +559,219 @@ html, body {
     padding: 20px;
 }
 
+.hero-text h1{
+    position: absolute;
+    bottom: 480px; /* Расстояние от нижней границы */
+    left: 35%; /* Положение по горизонтали */
+    transform: translateX(-50%);
+    color: white; /* Цвет текста */
+    padding: 10px; /* Внутренний отступ */
+    font-size: 700%;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.hero-text p{
+    position: absolute;
+    bottom: 300px; /* Расстояние от нижней границы */
+    left: 35%; /* Положение по горизонтали */
+    transform: translateX(-50%);
+    color: white; /* Цвет текста */
+    padding: 10px; /* Внутренний отступ */
+    font-size: 400%;
+    text-transform: uppercase;
+}
+
 .projects-list h2 {
     color: #333;
     font-size: 1.5rem;
     margin-bottom: 10px; /* Отступ снизу от заголовка "Проекты" */
+}
+
+
+
+@media (max-width: 1900px) {
+    .hero-text h1 {
+        
+        bottom: 600px;
+        font-size: 600%;
+    }
+
+    .hero-text p {
+        
+        bottom: 460px;
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .hero-text h1 {
+        
+        bottom: 800px;
+        font-size: 600%;
+    }
+
+    .hero-text p {
+        
+        bottom: 630px;
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 1490px) {
+    .hero-text h1 {
+        
+        bottom: 800px;
+        font-size: 500%;
+    }
+
+    .hero-text p {
+        
+        bottom: 630px;
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .hero-text h1 {
+        
+        bottom: 900px;
+        font-size: 500%;
+    }
+
+    .hero-text p {
+        
+        bottom: 730px;
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-text h1 {
+        
+        bottom: 900px;
+        font-size: 500%;
+    }
+
+    .hero-text p {
+        
+        bottom: 700px;
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero-text h1 {
+        
+        bottom: 900px;
+        font-size: 450%;
+    }
+
+    .hero-text p {
+        
+        bottom: 700px;
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 990px) {
+    .hero-text h1 {
+        
+        bottom: 900px;
+        font-size: 400%;
+    }
+
+    .hero-text p {
+        
+        bottom: 730px;
+        font-size: 250%;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-text h1 {
+        
+        bottom: 990px;
+        font-size: 350%;
+    }
+
+    .hero-text p {
+        
+        bottom: 810px;
+        font-size: 250%;
+    }
+}
+
+@media (max-width: 810px) {
+    .hero-text h1 {
+        bottom: 990px;
+        font-size: 300%;
+    }
+
+    .hero-text p {
+        bottom: 850px;
+        font-size: 200%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        bottom: 990px;
+        font-size: 280%;
+    }
+
+    .hero-text p {
+        bottom: 850px;
+        font-size: 180%;
+    }
+}
+
+@media (max-width: 710px) {
+    .hero-text h1 {
+        bottom: 990px;
+        font-size: 250%;
+    }
+
+    .hero-text p {
+        bottom: 900px;
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 610px) {
+    .hero-text h1 {
+        bottom: 1040px;
+        font-size: 250%;
+    }
+
+    .hero-text p {
+        bottom: 930px;
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 580px) {
+    .hero-text h1 {
+        bottom: 1040px;
+        font-size: 200%;
+    }
+
+    .hero-text p {
+        bottom: 980px;
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-text h1 {
+        bottom: 1040px;
+        font-size: 200%;
+    }
+
+    .hero-text p {
+        bottom: 980px;
+        font-size: 100%;
+    }
 }
 
 /* карточка  */
@@ -411,7 +783,7 @@ html, body {
 }
 
 .projects-card {
-    background-color: #C0C0C0; 
+    background-color: #222; 
     padding: 10px;
     border-radius: 20px;
     width: calc(30% - 10px); /* Ширина на половину страницы с учетом отступов */
@@ -423,10 +795,14 @@ html, body {
 
 .card-title {
     font-size: 2.5em; /* увеличение размера надписи "Проект" */
+    color: white;
+    text-align: center;
 }
 
 .card-price {
     font-size: 2.2em; /* увеличение размера надписи "Цена" */
+    color: white;
+    text-align: center;
 }
 
 .btn-details {
@@ -453,8 +829,147 @@ html, body {
 .projects-list h2{
     font-size: xx-large;
     text-align: center;
+    text-transform: uppercase;
 }
 
+.hero-content {
+    background-color: #FFFFFF; /* White background color */
+    padding: 20px;
+}
+
+@media (max-width: 2227px) {
+    .hero-content {
+        margin-top: -5vh;
+    }
+}
+
+@media (max-width: 2067px) {
+    .hero-content {
+        margin-top: -10vh;
+    }
+}
+
+@media (max-width: 1960px) {
+    .hero-content {
+        margin-top: -15vh;
+    }
+
+    .btn-details {
+        padding: 20px 70px;
+    }
+}
+
+@media (max-width: 1841px) {
+    .hero-content {
+        margin-top: -19vh;
+    }
+
+    .projects-card {
+        width: calc(33.333% - 20px); /* Ensure three cards per row */
+        left: 200px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .hero-content {
+        margin-top: -25vh;
+    }
+
+    .btn-details {
+        padding: 18px 70px;
+    }
+}
+
+@media (max-width: 1551px) {
+    .hero-content {
+        margin-top: -32vh;
+    }
+
+    .btn-details {
+        padding: 16px 70px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .hero-content {
+        margin-top: -35vh;
+    }
+
+    .projects-card {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .hero-content {
+        margin-top: -40vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-content {
+        margin-top: -47vh;
+    }
+
+    .projects-card {
+        left: 150px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero-content {
+        margin-top: -53vh;
+    }
+
+    .projects-card {
+        width: calc(50% - 20px); /* Increase the width of the cards */
+        left: 190px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        margin-top: -60vh;
+    }
+}
+
+@media (max-width: 790px) {
+    .hero-content {
+        margin-top: -67vh;
+    }
+
+    .projects-card {
+        width: calc(100% - 20px);
+        left: -20px;
+    }
+
+    .btn-details {
+        padding: 25px 70px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-content {
+        margin-top: -70vh;
+    }
+
+    .projects-card {
+        width: calc(100% - 20px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        margin-top: -75vh;
+    }
+
+    .projects-card {
+        width: calc(100% - 20px);
+        left: -20px;
+    }
+}
 
 /* object */
 
@@ -466,25 +981,28 @@ html, body {
     width: 100%; /* Ширина объекта */
     margin: 50px 0; /* Отступы сверху и снизу */
     text-align: center;
+    clear: both;
 }
 
 .objects-card {
-    background-color: #C0C0C0; /* Фоновая颜ка для карточки */
+    background-color: #222; /* Фоновая颜ка для карточки */
     padding: 10px;
     border-radius: 20px; /* Скругление углов */
     width: calc(30% - 10px); /* Ширина карточки на половину страницы с учетом отступов */
     height: 540px;
     margin: 35px; /* Отступ между карточками и отступ от краев */
-    float: left; /* Выравнивание карточек влево */
+    float: left; 
     position: relative;
 }
 
 .objects-h3 {
     font-size: 2.5em; /* увеличение размера надписи "Наши объекты" */
+    text-transform: uppercase;
 }
 
 .object-title {
     font-size: 2.5em;
+    color: white;
 }
 
 .object-img{
@@ -494,10 +1012,57 @@ html, body {
     margin-bottom: 10px;
 }
 
+@media (max-width: 1960px) {
+    .objects-card {
+        left: 220px;
+    }
+}
+
+@media (max-width: 1830px) {
+
+    .objects-card {
+        height: 550px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .objects-card {
+        height: 550px;
+    }
+
+    .btn-details {
+        padding: 15px 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .objects-card {
+        height: 600px;
+        left: 170px;
+    }
+
+    .btn-details {
+        padding: 15px 60px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .objects-card {
+        width: calc(50% - 20px);
+        left: 205px;
+    }
+}
+
+@media (max-width: 790px) {
+    .objects-card {
+        width: calc(100% - 20px);
+        left: -25px;
+    }
+}
+
 /* projects1.html */
 
 .gallery-container {
-    text-align: center;
     position: relative;
 }
 
@@ -507,25 +1072,27 @@ html, body {
     align-items: center;
     position: relative;
     margin-left: 200px;
-    margin-top: 60px;
 }
 
 .photo {
     margin: 0 auto; /* Центрируем блок фотографии по горизонтали */
-    border-radius: 10px;
     position: relative;
     display: block; /* Изменяем стиль отображения на блок, чтобы он занимал всю доступную ширину родительского контейнера */
     width: 1400px; /* Фиксированная ширина */
     height: 800px; /* Фиксированная высота */
     left: -150px;
+    object-fit: cover;
+    position: relative; /* Обязательно укажите позиционирование */
+    left: 50%; /* Перемещаем изображение вправо на 50% ширины самого изображения */
+    transform: translateX(-50%);
+    top: -35px;
 }
 
 .photo img {
     display: block;
     width: 1400px; /* например, фиксированная ширина */
     height: 800px; /* например, фиксированная высота */
-    object-fit: cover; /* сохранение пропорций, чтобы изображение целиком заполнить блок */
-    
+    border-radius: 10px;
 }
 
 
@@ -539,6 +1106,7 @@ html, body {
 }
 
 .prev, .next {
+    display: block;
     font-size: 30px;
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
@@ -549,27 +1117,180 @@ html, body {
 
 .prev {
     position: absolute;
-    left: 200px; /* Располагаем кнопку слева от фотографии */
+    left: 520px; /* Располагаем кнопку слева от фотографии */
+    top: -550px;
 }
 
 .next {
     position: absolute;
-    right: -1600px; /* Располагаем кнопку справа от фотографии */
+    right: -1880px; /* Располагаем кнопку справа от фотографии */
+    top: -550px;
 }
 
 .description-container {
-    background-color: #C0C0C0; 
-    padding: 23px;
-    border-radius: 20px;
+    text-align: center;
+    padding: 100px;
     width: 1900px; /* Ширина на половину страницы с учетом отступов */
-    height: 560px;
+    height: 250px;
     margin: 0 auto; /* Центрируем контейнер влево и вправо */
     float: none; /* Отменяем выравнивание карточек влево */
+}
+
+.description-container h3 {
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
     position: relative;
-    transform: none; /* Отменяем сдвиг на 25px влево и вверх */
-    font-size: 26px; /* Увеличиваем размер текста */
-    text-align: left; /* Выравниваем текст по левому краю */
-    padding-left: calc(20px + 23px + 160px); /* Смещаем фон вправо на 200px, учитывая padding и border-radius */
+    left: 780px;
+    transform: translateX(-50%);
+    font-size: 700%;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.characteristics {
+    margin-top: 20px; /* Add space between gallery and characteristics */
+    padding: 20px;
+}
+
+.characteristics h4 {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #333; /* Funktioniert! */
+    font-size: xx-large; /* Funktioniert! */
+    position: relative;
+    left: 620px;
+    transform: translateX(-50%);
+    text-decoration: underline;
+}
+
+.characteristics ul {
+    list-style: none;
+    padding: 0;
+    text-align: right; /* Align the list items to the right */
+}
+
+.characteristics li {
+    font-size: 25px;
+    margin-bottom: 5px;
+    text-align: left; /* Reset the text alignment for list items */
+    padding-right: 20px; /* Shift the text slightly to the right */
+    position: relative;
+    left: 490px;
+}
+
+.project-plan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .project-plan h5 {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #333; /* Funktioniert! */
+    font-size: xx-large; /* Funktioniert! */
+    position: relative;
+    left: 610px;
+    transform: translateX(-50%);
+    text-decoration: underline;
+  }
+  
+  .project-plan img {
+    width: 1200px;
+    height: 1200px;
+    margin-top: 20px;
+    margin-left: 100px;
+  }
+  
+  .project-plan .floor-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+
+/* advantages */
+
+.advantages {
+    position: relative;
+    width: 100%;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff; /* Черный фон */
+}
+
+.advantages-h3 {
+    margin-bottom: 30px;
+    margin-top: 100px;
+    font-size: xx-large;
+    color: #222; /* Белый цвет для заголовка на черном фоне */
+}
+
+.advantages-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 10px 0;
+    color: #fff; /* Белый цвет текста */
+}
+
+.step-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    background: #222;
+    border-radius: 8px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #025a02; /* Зеленый цвет */
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.step-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+.line {
+    width: 2px;
+    height: 40px;
+    background: #025a02; /* Зеленый цвет */
+    margin: 0 20px;
+}
+
+.step p {
+    font-size: 20px;
+    flex: 1;
 }
 
 /* application */
@@ -578,13 +1299,16 @@ html, body {
 
 .application{
     position: relative;
-    min-height: 100vh;
-    padding: 50px 100px;
+    width: 100%;
+    margin: 40px;
+    margin-left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: #222;
+    min-height: 800px; /* Минимальная высота для большей длины блока */
+    padding: 20px; /* Дополнительный внутренний отступ */
 }
 
 .application .application-content{
@@ -597,7 +1321,8 @@ html, body {
     font-size: 4em;
     color: #fff;
     font-weight: 500;
-    
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 
 .application .application-content p{
@@ -653,7 +1378,7 @@ html, body {
 }
 
 .application-container .applicationForm h4{
-    font-size: 2em;
+    font-size: 3em;
     color: #333;
     font-weight: 500;
 }
@@ -681,7 +1406,7 @@ html, body {
     pointer-events: none;
     padding: 5px 0;
     margin: 10px 0;
-    font-size: 1.1em;
+    font-size: 2em;
     color: #666;
     transition: 0.5s;
     top: -15px;
@@ -689,7 +1414,7 @@ html, body {
 
 .application-container .applicationForm .inputBox input:focus ~ span, .application-container .applicationForm .inputBox input:valid ~span{
     color: #025a02;
-    font-size: 0.9em;
+    font-size: 1.5em;
     transform: translateY(-20px);
 }
 
@@ -700,22 +1425,30 @@ html, body {
     border: none;
     cursor: pointer;
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: 500;
 }
 
-@media (max-width: 991px){
-    .application{
+@media (max-width: 991px) {
+    .application {
         padding: 50px;
+        text-align: center; /* Center the text */
     }
-    .application-container{
+    .application-container {
         flex-direction: column;
+        align-items: center; /* Center the elements vertically */
     }
-    .application-container .applicationInfo, .application-container .applicationForm{
-        width: 100%;
+    .application-container .applicationInfo {
+        width: 80%; /* Adjust the width of the text to 80% */
+        text-align: center; /* Center the text inside the block */
+        margin-bottom: 20px; /* Add space between the text and the form */
+        order: 1; /* Position the text above the form */
     }
-    .application-container .applicationForm{
-        padding: 50px 30px;
+    .application-container .applicationForm {
+        width: 80%; /* Adjust the width of the form to 80% */
+        text-align: center; /* Center the form */
+        padding: 30px; /* Adjust form padding */
+        order: 2; /* Position the form below the text */
     }
 }
 
@@ -821,7 +1554,7 @@ a:hover {
 }
 
 .contacts-bar {
-    background: #025a02;
+    background: #161616;
     text-align: center;
     padding: 10px 0;
     margin-top: 50px;
@@ -832,4 +1565,50 @@ a:hover {
     margin: 0;
     font-size: 16px;
     padding: 7px;
+}
+
+.contacts-bar h6 {
+    color: #343434;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.contacts-bar a {
+    color: #343434;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+    text-align: center;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.policy-title h2 {
+    font-size: 50px;
+    margin-top: 150px;
+    color: #0C0C0D;
+    text-align: center;
+}
+
+.policy-paragraph h3 {
+    color:#0C0C0D;
+    font-size: xx-large;
+    text-align: left;
+    margin-left: 55px;
+    margin-top: 50px;
+}
+
+.policy-info p {
+    color:#0C0C0D;
+    font-size: x-large;
+    text-align: left;
+    margin-left: 55px;
+    margin-top: 10px;
+}
+
+.policy {
+    padding-bottom: 150px;
 }
